@@ -1,0 +1,27 @@
+.container {
+    position: relative;
+    background: white;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    padding: 50px;
+}
+.container h2 {
+    text-align: center;
+}
+form {
+    flex: auto;
+    width: 90%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    padding: 50px;
+}
+.button {
+    background: #FF5A5F;
+    color: #FFFFFF;
+    height: 35px;
+    width: 20%;
+    border-style: none;
+    border-radius: 4px;
+}
