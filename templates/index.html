@@ -54,5 +54,12 @@
             <input class ="button" type="submit" value="Submit">
         </form>
     </section>
+    <section class="container">
+        {% for state in states%}
+            <ul>
+                <li> {{state}} </li>
+            </ul>
+        {% endfor %}
+    </section>
     </body>
 </html>

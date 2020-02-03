@@ -19,6 +19,8 @@ config = {
 }
 
 firebase = pyrebase.initialize_app(config)
+db = firebase.database()
+
 
 @app.route('/', strict_slashes=False)
 def index():
@@ -75,13 +77,19 @@ def get_data():
             num_list = sum(num_list)
             print(patient)
             print(num_list)
+            patient = num_list
             my_dict = {state: num_list}
-            return jsonify(my_dict)
 
         else:
             patient = int(patient)
             my_dict = {state: patient}
-            return jsonify(my_dict)
+
+        """ Database connection with firebase """
+        db.child("states").push(my_dict)
+        states = db.child("states").get()
+        states = states.val()
+
+        return(render_template("index.html", states=states.values()))
 
 """ run server """
 if __name__ == '__main__':
